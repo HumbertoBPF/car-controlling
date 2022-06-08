@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7183873402331388491}
   - component: {fileID: 7183873402331388490}
-  - component: {fileID: 7183873402331388468}
-  - component: {fileID: 7183873402331388469}
+  - component: {fileID: 4659432062625365582}
   m_Layer: 0
   m_Name: Parking_Car
-  m_TagString: Untagged
+  m_TagString: ParkingCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,20 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7183873402331388468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7183873402331388489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db30e44df19f2834cbafdf3867a61090, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!61 &7183873402331388469
-BoxCollider2D:
+--- !u!60 &4659432062625365582
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -111,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04441595, y: 0.024144888}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -121,6 +108,20 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.5020895, y: 1.7148252}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.984375, y: 0.859375}
+      - {x: 1.8568578, y: 0.8756294}
+      - {x: 1.46875, y: 0.90625}
+      - {x: 1.3925128, y: 0.890625}
+      - {x: -1.171875, y: 0.890625}
+      - {x: -1.453125, y: 0.90625}
+      - {x: -1.96875, y: 0.8756294}
+      - {x: -2.328125, y: 0.71875}
+      - {x: -2.3131294, y: 0.6562505}
+      - {x: -2.3131294, y: -0.6393666}
+      - {x: -2.21875, y: -0.78125}
+      - {x: -1.9375, y: -0.8600044}
+      - {x: 1.8137584, y: -0.8600042}
+      - {x: 2.296875, y: -0.53125}
+      - {x: 2.296875, y: 0.5}
