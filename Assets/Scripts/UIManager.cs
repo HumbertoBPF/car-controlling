@@ -115,7 +115,7 @@ public class UIManager : MonoBehaviour
         // When the game is over, the "R" key restarts it
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
 
