@@ -38,7 +38,7 @@ public class PlayerCar : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag == "ParkingCar" || collider.tag == "Plane")
+        if (collider.tag == "Parking Car 1" || collider.tag == "Parking Car 2" || collider.tag == "Wall")
         {
             _isDamaged = true;
         }
