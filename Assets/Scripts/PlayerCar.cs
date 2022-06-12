@@ -7,6 +7,12 @@ public class PlayerCar : MonoBehaviour
     [SerializeField]
     private bool _isDamaged = false;
     public bool IsDamaged { get { return _isDamaged; } }
+    [SerializeField]
+    private float _xInitial = 0.0f;
+    [SerializeField]
+    private float _yInitial = 0.0f;
+    [SerializeField]
+    private float _zInitial = 0.0f;
     // Car movement variables
     [SerializeField]
     private float _speedTranslation = 3.5f;
@@ -16,7 +22,7 @@ public class PlayerCar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(0, 0, 0);
+        transform.position = new Vector3(_xInitial, _yInitial, _zInitial);
     }
 
     // Update is called once per frame

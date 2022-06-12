@@ -4,58 +4,35 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class UIManager : MonoBehaviour
+public class UIManagerParkingGame : UIManagerObstacleGame
 {
-    private long _chronometerTime;
-    // Text objects (UI)
-    [SerializeField]
-    private Text _chronometerText;
-    [SerializeField]
-    private Text _playAgainText;
-    [SerializeField]
-    private Text _gameOverText;
+    // Text objects(UI)
     [SerializeField]
     private Text _distanceToWallText;
     [SerializeField]
     private Text _warningText;
     // Reference objects
-    private PlayerCar _playerCar;
     private GameObject _parkingCar1;
     private GameObject _parkingCar2;
     private GameObject _wall;
     // Dimensions
-    private Vector3 _playerDimensions;
     private Vector3 _parkingCarDimensions;
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        _playerCar = GameObject.Find("Player_Car").GetComponent<PlayerCar>();
+        _indexScene = 1;
         _wall = GameObject.Find("Wall");
-        _playerDimensions = _playerCar.GetComponent<Renderer>().bounds.size;
-        StartCoroutine(ChronometerCoroutine());
+        base.Start();
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        if (_playerCar.IsDamaged)
-        {
-            SetGameOverUI();
-        }
-        else
+        base.Update();
+        if (!_playerCar.IsDamaged)
         {
             UpdateDistanceToWall();
             UpdateWarning();
-        }
-    }
-
-    IEnumerator ChronometerCoroutine()
-    {
-        while (!_playerCar.IsDamaged)
-        {
-            yield return new WaitForSeconds(1.0f);
-            _chronometerTime++;
-            _chronometerText.text = _chronometerTime + " s";
         }
     }
 
@@ -104,18 +81,6 @@ public class UIManager : MonoBehaviour
         else
         {
             _warningText.text = "Place the car between \nthe other two";
-        }
-    }
-
-    private void SetGameOverUI()
-    {
-        // Show game over text
-        _gameOverText.gameObject.SetActive(true);
-        _playAgainText.gameObject.SetActive(true);
-        // When the game is over, the "R" key restarts it
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(1);
         }
     }
 

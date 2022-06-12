@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 496430}
   - component: {fileID: 21247642}
+  - component: {fileID: -654000010346609441}
   m_Layer: 0
   m_Name: minicar_yellow
   m_TagString: Untagged
@@ -171,6 +172,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &-654000010346609441
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117432}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.59375, y: 1.90625}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.3164563, y: 0.78125}
+      - {x: -1.5389621, y: 0.72250605}
+      - {x: -1.7772934, y: 0.4760604}
+      - {x: -1.7577121, y: -0.5112672}
+      - {x: -1.5075116, y: -0.7616687}
+      - {x: -1.5075116, y: -0.7616687}
+      - {x: 1.36293, y: -0.78125}
+      - {x: 1.796875, y: -0.47646236}
+      - {x: 1.796875, y: 0.44105482}
+      - {x: 1.4375, y: 0.734375}
 --- !u!1 &132682
 GameObject:
   m_ObjectHideFlags: 0

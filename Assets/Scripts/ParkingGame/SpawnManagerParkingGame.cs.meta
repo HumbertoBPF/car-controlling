@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 3c9c52b9e1b2e8a40b606e73a0174d97
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _parkingCarPrefab: {fileID: 7183873402331388489, guid: 37298607a604f8644a6903b375bfee4e, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

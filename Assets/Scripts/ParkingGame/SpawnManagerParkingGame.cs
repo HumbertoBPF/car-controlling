@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class SpawnManagerParkingGame : MonoBehaviour
 {
     [SerializeField]
     private float _xBound = 10.0f;
