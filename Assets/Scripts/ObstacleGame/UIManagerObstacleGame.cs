@@ -15,6 +15,8 @@ public class UIManagerObstacleGame : MonoBehaviour
     protected Text _playAgainText;
     [SerializeField]
     protected Text _gameOverText;
+    [SerializeField]
+    protected Text _menuShortcutText;
     // Reference objects
     protected PlayerCar _playerCar;
     // Dimensions
@@ -30,6 +32,11 @@ public class UIManagerObstacleGame : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            SceneManager.LoadScene(0);
+        }
+
         if (_playerCar.IsDamaged)
         {
             SetGameOverUI();
@@ -49,6 +56,7 @@ public class UIManagerObstacleGame : MonoBehaviour
     protected void SetGameOverUI()
     {
         // Show game over text
+        _menuShortcutText.gameObject.SetActive(false);
         _gameOverText.gameObject.SetActive(true);
         _playAgainText.gameObject.SetActive(true);
         // When the game is over, the "R" key restarts it
