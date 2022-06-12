@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Parking Car 1
   - Parking Car 2
+  - WallTopRIght
   layers:
   - Default
   - TransparentFX

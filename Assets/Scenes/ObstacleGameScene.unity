@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 211066363}
   - component: {fileID: 211066365}
   m_Layer: 0
-  m_Name: Wall_Down_Right
+  m_Name: Wall_Bottom_Right
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 216341848}
   - component: {fileID: 216341847}
   m_Layer: 0
-  m_Name: Plane_Bottom
+  m_Name: Wall_Bottom
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 232675009}
   - component: {fileID: 232675008}
   m_Layer: 5
-  m_Name: Game_Over_text
+  m_Name: End_Game_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 430839058}
   - component: {fileID: 430839057}
   m_Layer: 0
-  m_Name: Plane_Left
+  m_Name: Wall_Left
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -547,7 +547,7 @@ GameObject:
   - component: {fileID: 550676110}
   - component: {fileID: 550676109}
   m_Layer: 0
-  m_Name: Plane_Top
+  m_Name: Wall_Top
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -763,7 +763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _chronometerText: {fileID: 847154749}
   _playAgainText: {fileID: 964565042}
-  _gameOverText: {fileID: 232675008}
+  _endGameText: {fileID: 232675008}
   _menuShortcutText: {fileID: 1714009415}
 --- !u!1 &773191786
 GameObject:
@@ -777,8 +777,8 @@ GameObject:
   - component: {fileID: 773191787}
   - component: {fileID: 773191789}
   m_Layer: 0
-  m_Name: Wall_Up_Right
-  m_TagString: Untagged
+  m_Name: Wall_Top_Right
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

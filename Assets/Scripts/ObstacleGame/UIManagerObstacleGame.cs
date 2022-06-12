@@ -4,65 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class UIManagerObstacleGame : MonoBehaviour
+public class UIManagerObstacleGame : UIManager
 {
-    protected int _indexScene = 2;
-    protected long _chronometerTime;
-    // Text objects (UI)
-    [SerializeField]
-    protected Text _chronometerText;
-    [SerializeField]
-    protected Text _playAgainText;
-    [SerializeField]
-    protected Text _gameOverText;
-    [SerializeField]
-    protected Text _menuShortcutText;
-    // Reference objects
-    protected PlayerCar _playerCar;
-    // Dimensions
-    protected Vector3 _playerDimensions;
     // Start is called before the first frame update
-    protected virtual void Start()
+    protected override void Start()
     {
-        _playerCar = GameObject.Find("Player_Car").GetComponent<PlayerCar>();
-        _playerDimensions = _playerCar.GetComponent<Renderer>().bounds.size;
-        StartCoroutine(ChronometerCoroutine());
+        _indexScene = 2;
+        base.Start();
     }
 
     // Update is called once per frame
-    protected virtual void Update()
+    protected override void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        base.Update();
+        // If the player car leaves the parking, the player wins
+        if (_playerCar.gameObject.transform.position.x - _playerDimensions.x > 10.0f)
         {
-            SceneManager.LoadScene(0);
-        }
-
-        if (_playerCar.IsDamaged)
-        {
-            SetGameOverUI();
-        }
-    }
-
-    protected IEnumerator ChronometerCoroutine()
-    {
-        while (!_playerCar.IsDamaged)
-        {
-            yield return new WaitForSeconds(1.0f);
-            _chronometerTime++;
-            _chronometerText.text = _chronometerTime + " s";
-        }
-    }
-
-    protected void SetGameOverUI()
-    {
-        // Show game over text
-        _menuShortcutText.gameObject.SetActive(false);
-        _gameOverText.gameObject.SetActive(true);
-        _playAgainText.gameObject.SetActive(true);
-        // When the game is over, the "R" key restarts it
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(_indexScene);
+            SetEndGameUI(false);
         }
     }
 }
