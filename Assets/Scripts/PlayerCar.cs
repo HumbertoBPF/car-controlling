@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerCar : MonoBehaviour
 {
+    // Flag to determine if the player can move the car
     [SerializeField]
-    private bool _isDamaged = false;
-    public bool IsDamaged { get { return _isDamaged; } }
+    private bool _isEnabled = true;
+    public bool IsEnabled { get { return _isEnabled; } set { _isEnabled = value; } }
+    // Initial position of the car on the screen
     [SerializeField]
     private float _xInitial = 0.0f;
     [SerializeField]
@@ -15,9 +17,9 @@ public class PlayerCar : MonoBehaviour
     private float _zInitial = 0.0f;
     // Car movement variables
     [SerializeField]
-    private float _speedTranslation = 3.5f;
+    private float _speedTranslation = 5.0f;
     [SerializeField]
-    private float _speedRotation = 10.0f;
+    private float _speedRotation = 15.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,7 @@ public class PlayerCar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!_isDamaged)
+        if (_isEnabled)
         {
             ControlCarByKeys();
         }
@@ -46,7 +48,7 @@ public class PlayerCar : MonoBehaviour
     {
         if (collider.tag == "Parking Car 1" || collider.tag == "Parking Car 2" || collider.tag == "Wall")
         {
-            _isDamaged = true;
+            _isEnabled = false;
         }
     }
 

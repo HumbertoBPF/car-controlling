@@ -32,7 +32,7 @@ public class UIManagerParkingGame : UIManager
     protected override void Update()
     {
         base.Update();
-        if (!_playerCar.IsDamaged)
+        if (_playerCar.IsEnabled)
         {
             UpdateDistanceToWall();
             UpdateWarning();

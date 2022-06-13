@@ -9,20 +9,18 @@ public class UIManager : MonoBehaviour
     protected int _indexScene;
     protected string _successText = "Congratulations :)";
     protected long _chronometerTime;
-    protected bool _isEndGame = false;
     // Text objects (UI)
     [SerializeField]
     protected Text _chronometerText;
     [SerializeField]
-    protected Text _playAgainText;
+    protected Text _shortcutsText;
     [SerializeField]
     protected Text _endGameText;
-    [SerializeField]
-    protected Text _menuShortcutText;
     // Reference objects
     protected PlayerCar _playerCar;
     // Dimensions
     protected Vector3 _playerDimensions;
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -34,18 +32,19 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
+        // Shortcut to main menu (always active)
         if (Input.GetKeyDown(KeyCode.M))
         {
             SceneManager.LoadScene(0);
         }
 
-        // When the game has ended, the "R" key restarts it
-        if (_isEndGame && Input.GetKeyDown(KeyCode.R))
+        // When the game has ended(i.e. player cannot control the car anymore), the "R" key restarts it
+        if (!_playerCar.IsEnabled && Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(_indexScene);
         }
 
-        if (_playerCar.IsDamaged)
+        if (!_playerCar.IsEnabled)
         {
             SetEndGameUI(true);
         }
@@ -53,7 +52,7 @@ public class UIManager : MonoBehaviour
 
     protected IEnumerator ChronometerCoroutine()
     {
-        while (!_isEndGame)
+        while (_playerCar.IsEnabled)
         {
             yield return new WaitForSeconds(1.0f);
             _chronometerTime++;
@@ -63,15 +62,14 @@ public class UIManager : MonoBehaviour
 
     protected virtual void SetEndGameUI(bool isGameOver)
     {
-        _isEndGame = true;
-        // Show game over text
+        _playerCar.IsEnabled = false;
+        // Default text corresponds to a game over scenario. If the player wins, change set text
         if (!isGameOver)
         {
             _endGameText.fontSize = 25;
             _endGameText.text = _successText;
         }
-        _menuShortcutText.gameObject.SetActive(false);
         _endGameText.gameObject.SetActive(true);
-        _playAgainText.gameObject.SetActive(true);
+        _shortcutsText.text = "Press 'R' to play again\nor 'M' to return to the main menu";
     }
 }
