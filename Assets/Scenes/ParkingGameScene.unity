@@ -575,8 +575,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1942270112}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1848177067}
+        m_TargetAssemblyTypeName: ScoreSubmissionForm, Assembly-CSharp
         m_MethodName: OnClickCancelButton
         m_Mode: 1
         m_Arguments:
@@ -2175,6 +2175,7 @@ GameObject:
   - component: {fileID: 1848177064}
   - component: {fileID: 1848177066}
   - component: {fileID: 1848177065}
+  - component: {fileID: 1848177067}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -2245,6 +2246,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848177063}
   m_CullTransparentMesh: 1
+--- !u!114 &1848177067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848177063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620e392b212c3c647b8b1c26b7f92664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _usernameInputField: {fileID: 1254112396}
+  _passwordInputField: {fileID: 1168511700}
+  _panel: {fileID: 1848177063}
+  _responseText: {fileID: 1831081894}
 --- !u!1 &1942270107
 GameObject:
   m_ObjectHideFlags: 0
@@ -2368,10 +2385,7 @@ MonoBehaviour:
   _chronometerText: {fileID: 2013555407}
   _shortcutsText: {fileID: 1247336864}
   _endGameText: {fileID: 1553305014}
-  _usernameInputField: {fileID: 1254112396}
-  _passwordInputField: {fileID: 1168511700}
   _panel: {fileID: 1848177063}
-  _responseText: {fileID: 1831081894}
   _distanceToWallText: {fileID: 198103449}
   _warningText: {fileID: 482088027}
   _endGameButton: {fileID: 1602312693}
@@ -2619,8 +2633,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1942270112}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1848177067}
+        m_TargetAssemblyTypeName: ScoreSubmissionForm, Assembly-CSharp
         m_MethodName: OnClickSubmitButton
         m_Mode: 1
         m_Arguments:

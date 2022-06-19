@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 154905776}
   - component: {fileID: 154905775}
   - component: {fileID: 154905774}
+  - component: {fileID: 154905777}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -204,6 +205,22 @@ RectTransform:
   m_AnchoredPosition: {x: -2, y: 3}
   m_SizeDelta: {x: -298.0135, y: -216.17}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &154905777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154905773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620e392b212c3c647b8b1c26b7f92664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _usernameInputField: {fileID: 2055260633}
+  _passwordInputField: {fileID: 1031254172}
+  _panel: {fileID: 154905773}
+  _responseText: {fileID: 496791947}
 --- !u!1 &211066362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,10 +1089,7 @@ MonoBehaviour:
   _chronometerText: {fileID: 847154749}
   _shortcutsText: {fileID: 964565042}
   _endGameText: {fileID: 232675008}
-  _usernameInputField: {fileID: 2055260633}
-  _passwordInputField: {fileID: 1031254172}
   _panel: {fileID: 154905773}
-  _responseText: {fileID: 496791947}
 --- !u!1 &773191786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1511,8 +1525,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 568035640}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 154905777}
+        m_TargetAssemblyTypeName: ScoreSubmissionForm, Assembly-CSharp
         m_MethodName: OnClickSubmitButton
         m_Mode: 1
         m_Arguments:
@@ -2757,8 +2771,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 568035640}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 154905777}
+        m_TargetAssemblyTypeName: ScoreSubmissionForm, Assembly-CSharp
         m_MethodName: OnClickCancelButton
         m_Mode: 1
         m_Arguments:
