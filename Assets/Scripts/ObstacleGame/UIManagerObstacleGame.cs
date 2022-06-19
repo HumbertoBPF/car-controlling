@@ -10,6 +10,7 @@ public class UIManagerObstacleGame : UIManager
     protected override void Start()
     {
         _indexScene = 2;
+        _gameId = 1;
         base.Start();
     }
 
@@ -18,7 +19,7 @@ public class UIManagerObstacleGame : UIManager
     {
         base.Update();
         // If the player car leaves the parking, the player wins
-        if (_playerCar.gameObject.transform.position.x - _playerDimensions.x > 10.0f)
+        if ((_playerCar.gameObject.transform.position.x - _playerDimensions.x > 10.0f) && !_isEndGame)
         {
             SetEndGameUI(false);
         }

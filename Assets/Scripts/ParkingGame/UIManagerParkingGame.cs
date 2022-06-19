@@ -24,6 +24,7 @@ public class UIManagerParkingGame : UIManager
     protected override void Start()
     {
         _indexScene = 1;
+        _gameId = 2;
         _wall = GameObject.Find("Wall");
         base.Start();
     }
@@ -57,12 +58,12 @@ public class UIManagerParkingGame : UIManager
         // Give a feedback to the user about its performance
         if (_distanceToWall <= 0.50f)
         {
-            _successText += "\nPerfect parking.";
+            _successText += "\nPerfect parking. Your score was ";
         }
         // Slight infraction
         else if (_distanceToWall < 1.0f)
         {
-            _successText = "Thank you for playing. You got a slight infraction.\nTry to improve you result.";
+            _successText = "Thank you for playing. You got a slight infraction.\nTry to improve you result. Your score was ";
         }
         base.SetEndGameUI(isGameOver);
     }
@@ -120,7 +121,21 @@ public class UIManagerParkingGame : UIManager
 
     public void OnClickEndGameButton()
     {
-        SetEndGameUI(false);
+        if (!_isEndGame)
+        {
+            SetEndGameUI(false);
+        }
+    }
+
+    protected override long GetScore()
+    {
+        if (_distanceToWall > 0.50f && _distanceToWall < 1.0f)
+        {
+            // Infraction, so we double the score as penalty(greater the score, worse the performance) 
+            return 2*base.GetScore();
+        }
+        
+        return base.GetScore();
     }
 
 }
