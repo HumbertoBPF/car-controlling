@@ -95,8 +95,9 @@ GameObject:
   - component: {fileID: 496430}
   - component: {fileID: 21247642}
   - component: {fileID: -654000010346609441}
+  - component: {fileID: 2811095112443766347}
   m_Layer: 0
-  m_Name: minicar_yellow
+  m_Name: Moving_Cpu_Car_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,6 +208,19 @@ PolygonCollider2D:
       - {x: 1.796875, y: -0.47646236}
       - {x: 1.796875, y: 0.44105482}
       - {x: 1.4375, y: 0.734375}
+--- !u!114 &2811095112443766347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f3f932c31c51843ae2730651d51a08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speedTranslation: 5
 --- !u!1 &132682
 GameObject:
   m_ObjectHideFlags: 0

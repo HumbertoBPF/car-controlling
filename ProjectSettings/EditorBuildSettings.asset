@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ObstacleGameScene.unity
     guid: 2e05579a434400c458cc8b437aa1caea
+  - enabled: 1
+    path: Assets/Scenes/DrivingGameScene.unity
+    guid: 80c10ab0177f3e54d907b1f2ae99aaf6
   m_configObjects: {}
