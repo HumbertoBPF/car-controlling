@@ -36,7 +36,9 @@ public abstract class PlayerCar : MonoBehaviour
             ControlCarByKeys();
         }
     }
-
+    /// <summary>
+    /// Method describing how the user can control the car movement.
+    /// </summary>
     protected abstract void ControlCarByKeys();
 
     private void OnTriggerEnter2D(Collider2D collider)

@@ -46,7 +46,10 @@ public class ScoreSubmissionForm : MonoBehaviour
     {
         SetVisibilityScoreForm(false);
     }
-
+    /// <summary>
+    /// Sends a POST request in order to 
+    /// </summary>
+    /// <returns></returns>
     IEnumerator PostScore()
     {
         string url = "http://localhost:8000/api/scores";
@@ -93,7 +96,12 @@ public class ScoreSubmissionForm : MonoBehaviour
         //Signals that this UnityWebRequest is no longer being used, and should clean up any resources it is using
         request.Dispose();
     }
-
+    /// <summary>
+    /// Formats the BasicAuthentication string given a username and a password.
+    /// </summary>
+    /// <param name="username">username input</param>
+    /// <param name="password">password input</param>
+    /// <returns></returns>
     string GetAuthString(string username, string password)
     {
         Debug.Log("username = " + username);

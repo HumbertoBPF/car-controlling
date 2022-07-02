@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnManagerObstacleGame : MonoBehaviour
 {
+    // Boundaries of the parking
     [SerializeField]
     private float _xUpperBound = 8.0f;
     [SerializeField]
@@ -12,6 +13,7 @@ public class SpawnManagerObstacleGame : MonoBehaviour
     private float _yUpperBound = 6.0f;
     [SerializeField]
     private float _yLowerBound = -4.0f;
+    // Cars in the parking
     private PlayerCar _playerCar;
     private Vector3 _dimensionsPlayer;
     [SerializeField]
@@ -34,8 +36,9 @@ public class SpawnManagerObstacleGame : MonoBehaviour
         _yGrid = (int) ((_yUpperBound - _yLowerBound) / (_dimensionsPlayer.y + (_dimensionsPlayer.y + 1)));
         Debug.Log("xGrid = " + _xGrid);
         Debug.Log("yGrid = " + _yGrid);
+        // Add player car in the coordinates (0,0) of the grid
         _grid.Add("0|0", _playerCar.gameObject);
-
+        // Place _numberOfSpawns CPU cars randomly on the grid
         while (_grid.Count < _numbersOfSpawns + 1)
         {
             int i = UnityEngine.Random.Range(0, _xGrid + 1);
@@ -60,16 +63,21 @@ public class SpawnManagerObstacleGame : MonoBehaviour
     {
         Vector3 position = new Vector3(x, y, 0);
 
-        GameObject instance = Instantiate(_parkingCarPrefab, position, Quaternion.identity);
-        // Randomizing orientation
+        GameObject parkingCar = Instantiate(_parkingCarPrefab, position, Quaternion.identity);
+        // Randomizing orientation of the instantiated CPU car
         int orientation = UnityEngine.Random.Range(0, 2);
-        instance.transform.Rotate(orientation * 180 * Vector3.forward);
+        parkingCar.transform.Rotate(orientation * 180 * Vector3.forward);
 
-        instance.tag = "Parking Car 1";
+        parkingCar.tag = "Parking Car 1";
 
-        return instance;
+        return parkingCar;
     }
-
+    /// <summary>
+    /// Verifies if it is possible to place a CPU car in the neighbor places of an already placed CPU car and if it is
+    /// instantiates a CPU car in the neighbor positions available.
+    /// </summary>
+    /// <param name="i">x coordinate of the grid of the already placed CPU car</param>
+    /// <param name="j">y coordinate of the grid of the already placed CPU car</param>
     void InstantiateNeighbor(int i, int j)
     {
         ArrayList shiftList = new ArrayList();

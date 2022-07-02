@@ -23,7 +23,7 @@ public class SpawnManagerParkingGame : MonoBehaviour
         float deltaX = dimensionsParkingCar.x + (dimensionsPlayer.x + _tolerance);
         float xmax = _xBound;
         float xmin = deltaX - _xBound;
-
+        // Places the first car randomly on the x axis and the second car is placed deltaX behind
         float xRandom = UnityEngine.Random.Range(xmin, xmax);
         Vector3 positionParkingCar1 = new Vector3(xRandom, _yBound, 0);
         Vector3 positionParkingCar2 = new Vector3(xRandom - deltaX, _yBound, 0);

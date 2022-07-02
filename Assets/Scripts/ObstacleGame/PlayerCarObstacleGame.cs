@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerCarObstacleGame : PlayerCar
 {
+    /// <summary>
+    /// Horizontal input translates the car along the driver's vision axis. Vertical input controls the car's
+    /// rotation.
+    /// </summary>
     protected override void ControlCarByKeys()
     {
         float horizontalInput = Input.GetAxis("Horizontal");

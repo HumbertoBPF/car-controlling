@@ -106,7 +106,11 @@ public class UIManager : MonoBehaviour
         _endGameText.gameObject.SetActive(true);
         _shortcutsText.text = shortcutsText;
     }
-
+    /// <summary>
+    /// Indicates how the score must be computed. By default, the score is computed by multiplying the playing time by 10.
+    /// Override this method when the default behavior is supposed to be modified.
+    /// </summary>
+    /// <returns>The current score value (at the current instant measured by the chronometer).</returns>
     protected virtual long GetScore()
     {
         return _chronometerTime*10;

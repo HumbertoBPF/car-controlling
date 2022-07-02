@@ -10,11 +10,14 @@ public class PlayerCarDrivingGame : PlayerCar
     {
         SpeedControl();
         DirectionControl();
-
+        // The car does not moves along the x and z axis.
         float currentY = transform.position.y;
         transform.position = new Vector3(_xInitial, currentY, _zInitial);
     }
-
+    /// <summary>
+    /// Increases and reduces the speed of the car when right and left arrow keys respectively are pressed.
+    /// The speed lies in the interval [5,10].
+    /// </summary>
     void SpeedControl()
     {
         float rightButtonInput = Input.GetAxis("Horizontal");
@@ -29,7 +32,10 @@ public class PlayerCarDrivingGame : PlayerCar
             _speedTranslation -= _accelerationPerFrame;
         }
     }
-
+    /// <summary>
+    /// Moves the car to its left or its writing depending on the vertical arrow keys that are being pressed.
+    /// A rotation transformation is also applied in order to make this movement more realistic.
+    /// </summary>
     void DirectionControl()
     {
         float verticalInput = Input.GetAxis("Vertical");

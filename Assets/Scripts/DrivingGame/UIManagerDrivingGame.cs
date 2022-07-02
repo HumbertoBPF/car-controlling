@@ -33,10 +33,13 @@ public class UIManagerDrivingGame : UIManager
             _speedText.text = (10 * _playerCar.SpeedTranslation).ToString("N2") + "Km/h";
         }
     }
-
+    /// <summary>
+    /// Coroutine to update the distance driven so far. The distance update is not implemented direcly on the update method because 
+    /// known time interval between two distances updates is necessary in order to properly compute the increment in the distance.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator UpdateDistance()
     {
-        // We need a known time interval between two distances updates in order to compute the increment in the distance
         while (!_isEndGame)
         {
             yield return new WaitForSeconds(0.5f);
