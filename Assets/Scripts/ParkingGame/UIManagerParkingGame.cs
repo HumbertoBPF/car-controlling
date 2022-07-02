@@ -38,7 +38,7 @@ public class UIManagerParkingGame : UIManager
             UpdateDistanceToWall();
             UpdateWarning();
             // Checks if end game button should appear
-            if (_distanceToWall < 1.0f && IsPlayerCarBetweenParkingCars())
+            if (_distanceToWall < 1.0f && IsPlayerCarBetweenParkingCars() && IsPlayerCarHorizontallyAligned())
             {
                 _endGameButton.gameObject.SetActive(true);
             }
@@ -102,17 +102,36 @@ public class UIManagerParkingGame : UIManager
         {
             _parkingCar2 = GameObject.FindWithTag("Parking Car 2");
         }
-        // Checks if the player's car is between the two parking cars (wrt to the x coordinate)
+        
         if (IsPlayerCarBetweenParkingCars())
         {
-            _warningText.text = "";
+            if (IsPlayerCarHorizontallyAligned())
+            {
+                _warningText.text = "";
+            }
+            else
+            {
+                _warningText.text = "Align the car\nhorizontally";
+            }
         }
         else
         {
-            _warningText.text = "Place the car between \nthe other two";
+            _warningText.text = "Place the car between\nthe other two";
         }
     }
-
+    /// <summary>
+    /// Checks if the player's car is correctly aligned, i.e. if the rotation around the z axis is inferior to plus or 
+    /// minus 5 degrees.
+    /// </summary>
+    /// <returns></returns>
+    private bool IsPlayerCarHorizontallyAligned()
+    {
+        return (_playerCar.gameObject.transform.eulerAngles.z < 5.0f) && (_playerCar.gameObject.transform.eulerAngles.z > -5.0f);
+    }
+    /// <summary>
+    /// Checks if the player's car is between the two parking cars (wrt to the x coordinate).
+    /// </summary>
+    /// <returns></returns>
     private bool IsPlayerCarBetweenParkingCars()
     {
         return (_playerCar.transform.position.x + _playerDimensions.x / 2.0f) < (_parkingCar1.transform.position.x - _parkingCarDimensions.x / 2.0f)
