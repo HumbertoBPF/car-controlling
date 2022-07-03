@@ -941,7 +941,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13, y: -120}
+  m_AnchoredPosition: {x: 6, y: -120}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1247336864
@@ -977,7 +977,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Press \"M\" to return \nto the main menu"
+  m_Text: 'Press "M" to return to the main menu
+
+    "esc" to close the game'
 --- !u!222 &1247336865
 CanvasRenderer:
   m_ObjectHideFlags: 0

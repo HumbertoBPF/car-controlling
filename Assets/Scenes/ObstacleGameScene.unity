@@ -1210,7 +1210,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Press \"M\" to return \nto the main menu"
+  m_Text: 'Press "M" to return to the main menu
+
+    "esc" to close the game'
 --- !u!222 &964565043
 CanvasRenderer:
   m_ObjectHideFlags: 0

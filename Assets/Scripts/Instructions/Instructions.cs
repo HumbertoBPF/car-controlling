@@ -12,5 +12,10 @@ public class Instructions : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 }

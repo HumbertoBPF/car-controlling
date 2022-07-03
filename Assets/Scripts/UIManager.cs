@@ -73,6 +73,11 @@ public class UIManager : MonoBehaviour
             _scoreSubmissionForm.Score = GetScore();
             _scoreSubmissionForm.SetVisibilityScoreForm(true);
         }
+
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 
     protected IEnumerator ChronometerCoroutine()
@@ -95,13 +100,13 @@ public class UIManager : MonoBehaviour
         _playerCar.IsEnabled = false;
         _isEndGame = true;
         _isGameOver = isGameOver;
-        string shortcutsText = "Press 'R' to play again\n'M' to return to the main menu";
+        string shortcutsText = "Press \"R\" to play again\n\"M\" to return to the main menu\n\"esc\" to close the game";
         // Default text corresponds to a game over scenario. If the player wins, change set text appearance and add a short cut allowing user to save the score
         if (!isGameOver)
         {
             _endGameText.fontSize = 25;
             _endGameText.text = _successText;
-            shortcutsText += "\n'S' to save your score";
+            shortcutsText += "\n\"S\" to save your score";
         }
         _endGameText.gameObject.SetActive(true);
         _shortcutsText.text = shortcutsText;
