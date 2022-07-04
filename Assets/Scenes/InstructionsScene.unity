@@ -776,16 +776,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "   Driving game: drive a distance of 1 Km with the car without touching
-    other cars. Use the vertical\narrow keys to move the car in the road and the
-    horizontal arrow keys to accerate and brake.\n\n   Obstacle game: drive the car
-    to outside of the parking without touching other cars. Use the \nhorizontal arrow
-    keys to move the car and the verical arrow keys to turn the vehicle.\n\n   Parking
-    game: park the car between the other two parked cars without touching them. You
-    must \nalso align the car properly and park the car at most 1 meter from the
-    wall. A distance between 50 cm \nand 1 m corresponds to a slight infraction and
-    a distance lower or equal to 50 cm corresponds to no\ninfraction. Use the horizontal
-    arrow keys to move the car and the verical arrow keys to turn the \nvehicle."
+  m_Text: "   Driving game: drive a distance of 1 km with the car without touching
+    other cars. Use the vertical\narrow keys to move the car on the road and the
+    horizontal arrow keys to accelerate and brake.\n\n   Obstacle game: drive the
+    car to outside of the parking without touching other cars. Use the \nhorizontal
+    arrow keys to move the car and the verical arrow keys to turn the vehicle.\n\n  
+    Parking game: park the car between the other two parked cars without touching
+    them. You must \nalso align the car properly and park the car at most 1 meter
+    from the wall. A distance between 50 cm \nand 1 m corresponds to a slight infraction
+    and a distance lower or equal to 50 cm corresponds to no\ninfraction. Use the
+    horizontal arrow keys to move the car and the verical arrow keys to turn the
+    \nvehicle."
 --- !u!222 &1639755784
 CanvasRenderer:
   m_ObjectHideFlags: 0

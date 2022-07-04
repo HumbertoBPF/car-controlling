@@ -10,9 +10,9 @@ public class PlayerCarObstacleGame : PlayerCar
     /// </summary>
     protected override void ControlCarByKeys()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float clockwiseRotation = Input.GetAxis("Vertical");
-        transform.Translate(horizontalInput * Vector3.right * _speedTranslation * Time.deltaTime);
-        transform.Rotate(horizontalInput * clockwiseRotation * Vector3.forward * _speedRotation * Time.deltaTime);
+        float verticalInput = Input.GetAxis("Vertical");
+        float clockwiseRotation = -Input.GetAxis("Horizontal");
+        transform.Translate(verticalInput * Vector3.right * _speedTranslation * Time.deltaTime);
+        transform.Rotate(verticalInput * clockwiseRotation * Vector3.forward * _speedRotation * Time.deltaTime);
     }
 }

@@ -30,7 +30,7 @@ public class UIManagerDrivingGame : UIManager
         }
         else
         {
-            _speedText.text = (10 * _playerCar.SpeedTranslation).ToString("N2") + "Km/h";
+            _speedText.text = (10 * _playerCar.SpeedTranslation).ToString("N2") + "km/h";
         }
     }
     /// <summary>

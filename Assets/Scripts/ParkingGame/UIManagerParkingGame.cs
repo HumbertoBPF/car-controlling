@@ -71,7 +71,8 @@ public class UIManagerParkingGame : UIManager
     private void UpdateDistanceToWall()
     {
         // Checks the degree of the infraction according to the distance to the wall in order to set the text color
-        _distanceToWall = _wall.transform.position.y - (_playerCar.transform.position.y + _playerDimensions.y/2.0f);
+        // 0.11f ---> due to the fact that the player car object is bigger than the actual car image
+        _distanceToWall = _wall.transform.position.y - (_playerCar.transform.position.y + _playerDimensions.y/2.0f) - 0.11f;
         if (_distanceToWall <= 0.50f)
         {
             _distanceToWallText.color = Color.green;

@@ -20,14 +20,14 @@ public class PlayerCarDrivingGame : PlayerCar
     /// </summary>
     void SpeedControl()
     {
-        float rightButtonInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
 
-        if (_speedTranslation < 10.0f && rightButtonInput > 0)
+        if (_speedTranslation < 10.0f && verticalInput > 0)
         {
             _speedTranslation += _accelerationPerFrame;
         }
 
-        if (_speedTranslation > 5.0f && rightButtonInput < 0)
+        if (_speedTranslation > 5.0f && verticalInput < 0)
         {
             _speedTranslation -= _accelerationPerFrame;
         }
@@ -38,12 +38,12 @@ public class PlayerCarDrivingGame : PlayerCar
     /// </summary>
     void DirectionControl()
     {
-        float verticalInput = Input.GetAxis("Vertical");
-        transform.Translate(verticalInput * Vector3.up * _speedTranslation * Time.deltaTime);
+        float horizontalInput = -Input.GetAxis("Horizontal");
+        transform.Translate(horizontalInput * Vector3.up * _speedTranslation * Time.deltaTime);
 
         float rotationAngle = transform.rotation.z;
 
-        if (verticalInput == 0)
+        if (horizontalInput == 0)
         {
             if (rotationAngle > 0)
             {
@@ -55,9 +55,9 @@ public class PlayerCarDrivingGame : PlayerCar
                 transform.Rotate(Vector3.forward * _speedRotation * Time.deltaTime);
             }
         }
-        else if (verticalInput != 0)
+        else if (horizontalInput != 0)
         {
-            transform.Rotate(verticalInput * Vector3.forward * _speedRotation * Time.deltaTime);
+            transform.Rotate(horizontalInput * Vector3.forward * _speedRotation * Time.deltaTime);
         }
     }
 }
